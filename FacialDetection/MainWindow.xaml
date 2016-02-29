@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FacialDetection"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow"
+        Height="350"
+        Width="525">
     <Grid>
-        
+        <TabControl x:Name="MyTabController"
+                    HorizontalAlignment="Left"
+                    Height="238"
+                    Margin="10,75,0,0"
+                    VerticalAlignment="Top"
+                    Width="500">
+            <TabItem Header="Google">
+                <Grid Background="#FFE5E5E5" />
+            </TabItem>
+            <TabItem Header="OpenCV">
+                <Grid Background="#FFE5E5E5" />
+            </TabItem>
+        </TabControl>
+        <Label x:Name="lbStat"
+               Content="STAT:"
+               HorizontalAlignment="Left"
+               Margin="19,19,0,0"
+               VerticalAlignment="Top"
+               Height="41"
+               Width="61"
+               FontSize="21.333" />
+        <TextBlock x:Name="txtBStat"
+                   HorizontalAlignment="Left"
+                   Margin="85,30,0,0"
+                   TextWrapping="Wrap"
+                   Text=""
+                   VerticalAlignment="Top"
+                   Width="76"
+                   Height="30" />
+
     </Grid>
 </Window>
