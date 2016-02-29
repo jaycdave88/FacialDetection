@@ -9,26 +9,6 @@
         Height="350"
         Width="525">
     <Grid>
-        <TabControl x:Name="MyTabController"
-                    HorizontalAlignment="Left"
-                    Height="238"
-                    Margin="10,75,0,0"
-                    VerticalAlignment="Top"
-                    Width="500">
-            <TabItem Header="Google">
-                <Grid Background="#FFE5E5E5" />
-            </TabItem>
-            <TabItem Header="OpenCV">
-                <Grid Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13*" />
-                        <ColumnDefinition Width="14*" />
-                        <ColumnDefinition Width="32*" />
-                        <ColumnDefinition Width="435*" />
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </TabItem>
-        </TabControl>
         <Label x:Name="lbStat"
                Content="STAT:"
                HorizontalAlignment="Left"
@@ -45,6 +25,23 @@
                    VerticalAlignment="Top"
                    Width="76"
                    Height="30" />
+        <Button x:Name="btnStart"
+                Content="Start"
+                HorizontalAlignment="Left"
+                Margin="435,50,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="btnStart_Click" />
+        <Button x:Name="button"
+                Content="Button"
+                HorizontalAlignment="Left"
+                Height="100"
+                Margin="174,451,0,-227.889"
+                VerticalAlignment="Top"
+                Width="75" />
+        <Image x:Name="imgVideo"
+               Stretch="Fill"
+               Margin="151,110,212.444,54.111" />
 
     </Grid>
 </Window>

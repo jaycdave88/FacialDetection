@@ -1,0 +1,13 @@
+C:\Users\jdave\Desktop\codePlex\FacialDetection\bin\Debug\WPFCSharpWebCam.exe
+C:\Users\jdave\Desktop\codePlex\FacialDetection\bin\Debug\WPFCSharpWebCam.pdb
+C:\Users\jdave\Desktop\codePlex\FacialDetection\bin\Debug\WebCam_Capture.dll
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\FacialDetection.csprojResolveAssemblyReference.cache
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\Window1.baml
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\Window1.g.cs
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\App.g.cs
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\WPFCSharpWebCam_MarkupCompile.cache
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\WPFCSharpWebCam.g.resources
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\WPFCSharpWebCam.Properties.Resources.resources
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\FacialDetection.csproj.GenerateResource.Cache
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\WPFCSharpWebCam.exe
+C:\Users\jdave\Desktop\codePlex\FacialDetection\obj\Debug\WPFCSharpWebCam.pdb

@@ -1,0 +1,13 @@
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.csprojResolveAssemblyReference.cache
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\Window1.baml
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\Window1.g.cs
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\App.g.cs
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam_MarkupCompile.cache
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.g.resources
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.Properties.Resources.resources
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.csproj.GenerateResource.Cache
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\bin\Debug\WPFCSharpWebCam.exe
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\bin\Debug\WPFCSharpWebCam.pdb
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\bin\Debug\WebCam_Capture.dll
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.exe
+C:\Users\jdave\Desktop\codePlex\WPFCSharpWebCam\obj\Debug\WPFCSharpWebCam.pdb

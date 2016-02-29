@@ -1,10 +1,5 @@
-﻿using FacialDetection.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebCam_Capture;
+﻿using WebCam_Capture;
+using System.Windows.Controls;
 
 namespace FacialDetection
 {
@@ -13,7 +8,7 @@ namespace FacialDetection
         private WebCamCapture webcam;
         private System.Windows.Controls.Image _FrameImage;
         private int FrameNumber = 30;
-        public void InitializeWebCam(ref System.Windows.Controls.Image ImageControl)
+        public void InitializeWebCam(ref Image ImageControl)
         {
             webcam = new WebCamCapture();
             webcam.FrameNumber = ((ulong)(0ul));
@@ -25,6 +20,12 @@ namespace FacialDetection
         void webcam_ImageCaptured(object source, WebcamEventArgs e)
         {
             _FrameImage.Source = Helper.LoadBitmap((System.Drawing.Bitmap)e.WebCamImage);
+        }
+
+        public void Start()
+        {
+            webcam.TimeToCapture_milliseconds = FrameNumber;
+            webcam.Start(0);
         }
     }
 }
