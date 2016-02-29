@@ -19,7 +19,14 @@
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
             <TabItem Header="OpenCV">
-                <Grid Background="#FFE5E5E5" />
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*" />
+                        <ColumnDefinition Width="14*" />
+                        <ColumnDefinition Width="32*" />
+                        <ColumnDefinition Width="435*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
             </TabItem>
         </TabControl>
         <Label x:Name="lbStat"
