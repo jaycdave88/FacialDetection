@@ -30,6 +30,7 @@
                         Stretch="Fill" />
                 </Grid>
             </TabItem>
+            
         </TabControl>
         <Label x:Name="lbStat"
                Content="Stat:"
