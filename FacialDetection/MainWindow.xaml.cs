@@ -1,6 +1,7 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -16,19 +17,28 @@ namespace FacialDetection
         DispatcherTimer timer;
         private Capture capture;
         private HaarCascade haarCascade;
+        PerformanceCounter fdCPU = new PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, true);
 
         public MainWindow()
         {
             InitializeComponent();
+
+            DispatcherTimer dispatchTimer = new DispatcherTimer();
+            dispatchTimer.Tick += DispatchTimer_Tick;
+            dispatchTimer.Interval = new TimeSpan(0, 0, 2);
+            dispatchTimer.Start();
+
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+          
             capture = new Capture();
             haarCascade = new HaarCascade(@"haarcascade_frontalface_alt_tree.xml");
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(timer_Tick);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             timer.Start();
+
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -41,8 +51,14 @@ namespace FacialDetection
 
                 var detectedFaces = grayFrame.DetectHaarCascade(haarCascade)[0];
 
+                int TotalFaces = detectedFaces.Length;
+
+                lblStatInfoTotalFaces.Content = "Total Faces: " + TotalFaces.ToString();
+
+
                 foreach (var face in detectedFaces)
                     currentFrame.Draw(face.rect, new Bgr(0, double.MaxValue, 0), 3);
+
 
                 imgOpenCV.Source = ToBitmapSource(currentFrame);
             }
@@ -70,5 +86,12 @@ namespace FacialDetection
             }
         }
 
+        private void DispatchTimer_Tick(object sender, EventArgs e)
+        {
+            //lblStatInfo.Content = "CPU % = " + fdCPU.NextValue().ToString();
+            lblStatInfoCPU.Content = $"CPU % = {fdCPU.NextValue().ToString()}";
+        }
+
+   
     }
 }
