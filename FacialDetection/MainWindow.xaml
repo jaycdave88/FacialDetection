@@ -39,14 +39,14 @@
                Height="41"
                Width="60"
                FontSize="26.667" />
-        <TextBlock x:Name="txtbStat"
-                   HorizontalAlignment="Left"
-                   Margin="116,34,0,0"
-                   TextWrapping="Wrap"
-                   VerticalAlignment="Top"
-                   Height="30"
-                   Width="94"
-                   FontSize="16" />
+
+        <Label x:Name="lblStatInfo"
+               HorizontalAlignment="Left"
+               Margin="116,34,0,0"
+               VerticalAlignment="Top"
+               Height="30"
+               Width="94"
+               FontSize="16" />
 
     </Grid>
 </Window>
