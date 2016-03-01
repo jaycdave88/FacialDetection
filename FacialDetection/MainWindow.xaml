@@ -27,10 +27,9 @@
             <TabItem Header="OpenCV">
                 <Grid Background="#FFE5E5E5">
                     <Image Name="imgOpenCV"
-                        Stretch="Fill" />
+                           Stretch="Fill" />
                 </Grid>
             </TabItem>
-            
         </TabControl>
         <Label x:Name="lbStat"
                Content="Stat:"
