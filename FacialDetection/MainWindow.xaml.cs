@@ -39,9 +39,6 @@ namespace FacialDetection
             timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             timer.Start();
 
-            
-
-
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -54,8 +51,14 @@ namespace FacialDetection
 
                 var detectedFaces = grayFrame.DetectHaarCascade(haarCascade)[0];
 
+                int TotalFaces = detectedFaces.Length;
+
+                lblStatInfoTotalFaces.Content = "Total Faces: " + TotalFaces.ToString();
+
+
                 foreach (var face in detectedFaces)
                     currentFrame.Draw(face.rect, new Bgr(0, double.MaxValue, 0), 3);
+
 
                 imgOpenCV.Source = ToBitmapSource(currentFrame);
             }
@@ -86,7 +89,7 @@ namespace FacialDetection
         private void DispatchTimer_Tick(object sender, EventArgs e)
         {
             //lblStatInfo.Content = "CPU % = " + fdCPU.NextValue().ToString();
-            lblStatInfo.Content = $"CPU % = {fdCPU.NextValue().ToString()}";
+            lblStatInfoCPU.Content = $"CPU % = {fdCPU.NextValue().ToString()}";
         }
 
    
