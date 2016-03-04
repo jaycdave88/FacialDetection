@@ -20,14 +20,23 @@
                     Margin="60,111,0,0"
                     VerticalAlignment="Top"
                     Width="678"
-                    Grid.ColumnSpan="2">
-            <TabItem Header="TabItem">
+                    Grid.ColumnSpan="2"
+                    SelectedIndex="1">
+            <TabItem x:Name="tab1"
+                     Header="TabItem">
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
-            <TabItem Header="OpenCV">
+            <TabItem x:Name="tab2"
+                     Header="OpenCV">
                 <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*" />
+                        <ColumnDefinition Width="55*" />
+                    </Grid.ColumnDefinitions>
                     <Image Name="imgOpenCV"
-                           Stretch="Fill" />
+                           Stretch="Fill"
+                           Grid.ColumnSpan="2"
+                           Margin="0,0,-0.444,0" />
                 </Grid>
             </TabItem>
         </TabControl>
@@ -47,15 +56,23 @@
                Height="31"
                Width="191"
                FontSize="16"
-               Content="abcdefghijklomnopqrstuv" />
+               Content="LINE_FOR_CPU_DATA" />
         <Label x:Name="lblStatInfoTotalFaces"
                HorizontalAlignment="Left"
-               Margin="129,55,0,0"
+               Margin="129,80,0,0"
                VerticalAlignment="Top"
                Height="31"
                Width="191"
                FontSize="16"
-               Content="abcdefghijklomnopqrstuv" />
+               Content="LINE_FOR_TOTAL_FACES" />
+        <Label x:Name="lblStatMemory"
+               HorizontalAlignment="Left"
+               Margin="129,44,0,0"
+               VerticalAlignment="Top"
+               Height="31"
+               Width="191"
+               FontSize="16"
+               Content="LINE_FOR_MEMORY" />
 
     </Grid>
 </Window>

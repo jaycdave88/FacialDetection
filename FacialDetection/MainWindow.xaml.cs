@@ -4,6 +4,8 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -13,32 +15,33 @@ namespace FacialDetection
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+    //
     {
         DispatcherTimer timer;
         private Capture capture;
         private HaarCascade haarCascade;
-        PerformanceCounter fdCPU = new PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, true);
+        private PerformanceCounter fdCPU = new PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, true);
+        private PerformanceCounter fbMemCount = new PerformanceCounter("Memory", "Available MBytes");
+        //PerformanceCounter fdMemory = new PerformanceCounter("Memory", "Available MBytes", "FacialDetection.exe", true);
 
         public MainWindow()
         {
             InitializeComponent();
-
-            DispatcherTimer dispatchTimer = new DispatcherTimer();
-            dispatchTimer.Tick += DispatchTimer_Tick;
-            dispatchTimer.Interval = new TimeSpan(0, 0, 2);
-            dispatchTimer.Start();
-
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-          
-            capture = new Capture();
-            haarCascade = new HaarCascade(@"haarcascade_frontalface_alt_tree.xml");
-            timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
-            timer.Start();
 
+            if (tab2.IsSelected)
+            {
+                capture = new Capture();                
+                haarCascade = new HaarCascade(@"haarcascade_frontalface_alt_tree.xml");
+                timer = new DispatcherTimer();
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Interval = TimeSpan.FromSeconds(1); // change time interval to increase capture speed - CPU usage will increase 
+
+                timer.Start();
+            }
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -61,6 +64,8 @@ namespace FacialDetection
 
 
                 imgOpenCV.Source = ToBitmapSource(currentFrame);
+                lblStatInfoCPU.Content = $"CPU Usage:  {fdCPU.NextValue().ToString()}";
+                lblStatMemory.Content = "Memory Usage: "  + fbMemCount.NextValue().ToString();
             }
 
         }
@@ -86,12 +91,8 @@ namespace FacialDetection
             }
         }
 
-        private void DispatchTimer_Tick(object sender, EventArgs e)
-        {
-            //lblStatInfo.Content = "CPU % = " + fdCPU.NextValue().ToString();
-            lblStatInfoCPU.Content = $"CPU % = {fdCPU.NextValue().ToString()}";
-        }
+  
 
-   
+     
     }
 }
